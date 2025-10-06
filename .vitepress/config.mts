@@ -2,27 +2,30 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "My Awesome Project",
-  description: "A VitePress Site",
+  title: "Data Analytics by LeviS",
+  description: "Anotações das Aulas",
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Examples', link: '/markdown-examples' }
+      { text: 'Anotações', link: '/anotacoes' },
+       { text: 'Links', link: '/links' }
     ],
 
     sidebar: [
       {
-        text: 'Examples',
+        text: 'Aulas',
         items: [
-          { text: 'Markdown Examples', link: '/markdown-examples' },
-          { text: 'Runtime API Examples', link: '/api-examples' }
+          { text: 'Aula 1', link: '/aula1' },
+          { text: 'Aula 2', link: '/aula2' }
         ]
       }
     ],
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
+      { icon: 'github', link: 'https://github.com/levisporto/' },
+       { icon: 'instagram', link: 'https://www.instagram.com/levisporto' },
+        { icon: 'linkedin', link: 'https://www.linkedin.com/in/levisporto/' }
     ]
   }
 })
