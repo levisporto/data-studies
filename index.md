@@ -12,7 +12,7 @@ hero:
   actions:
     - theme: brand
       text: Minhas Anotações
-      link: /anotacoes
+      link: /aula1
     - theme: alt
       text: Links Importantes
       link: /links

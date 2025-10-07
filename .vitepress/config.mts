@@ -9,13 +9,13 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Anotações', link: '/anotacoes' },
+      { text: 'Anotações', link: '/aula1' },
        { text: 'Links', link: '/links' }
     ],
 
     sidebar: [
       {
-        text: 'Aulas',
+        text: 'Links Úteis',
         items: [
           { text: 'Aula 1', link: '/aula1' },
           { text: 'Aula 2', link: '/aula2' }
