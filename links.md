@@ -2,48 +2,23 @@
 outline: deep
 ---
 
-# Runtime API Examples
+# Links úteis
 
-This page demonstrates usage of some of the runtime APIs provided by VitePress.
 
-The main `useData()` API can be used to access site, theme, and page data for the current page. It works in both `.md` and `.vue` files:
+## [PostgresSQL](https://www.postgresql.org/download/)
 
-```md
-<script setup>
-import { useData } from 'vitepress'
+Página de download do RDMBS (Sistema Gerenciador de Banco de Dados Relacional) PostgresSQL. Para instalar em um PC, clique em Windows, depois em 
+["Download the installer"](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads) e clique no ícone de azul de instalação.  
+ > Esse instalador vem com um **Servidor PostgreSQL**, o **pgAdmin** e **Stack Builder** (um instalador de drivers e utilitários para o Postgres).
 
-const { theme, page, frontmatter } = useData()
-</script>
 
-## Results
 
-### Theme Data
-<pre>{{ theme }}</pre>
+## [Prisma Data Guide](https://www.prisma.io/dataguide)
 
-### Page Data
-<pre>{{ page }}</pre>
+Tutoriais e artigos muito bons sobre bancos de dados feitos pelo [Prisma](https://www.prisma.io/dataguide), uma empresa de ORM. (*em inglês*)
 
-### Page Frontmatter
-<pre>{{ frontmatter }}</pre>
-```
 
-<script setup>
-import { useData } from 'vitepress'
+## [Kaggle](https://www.kaggle.com/)
 
-const { site, theme, page, frontmatter } = useData()
-</script>
+Comunidade de estudantes de dados, com muitos cursos, competições e datasets. [Kaggle](https://www.kaggle.com/) é uma empresa da Google. (*em inglês*)
 
-## Results
-
-### Theme Data
-<pre>{{ theme }}</pre>
-
-### Page Data
-<pre>{{ page }}</pre>
-
-### Page Frontmatter
-<pre>{{ frontmatter }}</pre>
-
-## More
-
-Check out the documentation for the [full list of runtime APIs](https://vitepress.dev/reference/runtime-api#usedata).
