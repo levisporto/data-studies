@@ -1,10 +1,16 @@
 # Aula 1!
 
+::: info Olá! (30/09)
 Seja bem vindo(a) às minhas anotações das aulas de Data Analytics da Digital College. Esse curso possui 4 módulos: Banco de Dados (64h), ETL (48h), Phyton para Análise de Dados (44h), e Power BI Desktop (36h). Tem duração de 1 ano e cobre **SQL**, **Postgres**, **Business Inteligence**, **Python**, **Pandas** e mais.
 
 >As aulas estão acontecendo todas as terças das 18h às 22h, na sede Aldeota.
 
 Meu nome é [Levi](https://www.levisporto.com) e eu criei esse site para estudar e ajudar os colegas da turma e outras pessoas que tenham interesse em conhecer sobre dados. Se você quiser contribuir com as anotações ou falar comigo, pode [mandar uma mensagem](https://www.linkedin.com/in/levisporto/).
+
+:::
+
+
+
 
 
 ## Bancos de dados
@@ -18,9 +24,9 @@ Antes da era digital era comum escrever em tabelas (*index cards*) para organiza
 
 Hoje em dia os bancos de dados guardam informações criadas a todo momento. Uma empresa pode registrar o estoque, analisar quais produtos tem mais saída e tentar prever quanto irá vender no próximo ano. É a era do **big data**: os celulares, apps e sensores estão coletando bilhões de dados a todo momento para ajudar a tomar decisões e saber mais sobre o mundo.
 
-No contexto do desenvolvimento de software, os databases podem adicionar *dinamismo* aos programas: o database pode registrar login e senha dos seus usários, por exemplo, possibilitar um feed personalizado ou a atualização de preços de produtos, mostrar os pedidos realizados etc.  
+No contexto do desenvolvimento de software, os databases podem adicionar *dinamismo* aos programas: o database pode registrar login e senha dos seus usários, por exemplo, possibilitar um feed personalizado ou a atualização de preços de produtos, mostrar os pedidos realizados, ser um repositório de códigos e módulos etc.   
 
-> **Arquivos geralmente não são inseridos nos bancos de dados, e sim guardados em disco ou na memória.** Um codebase, por exemplo, não é um database. Mas arquivos que se relacionam entre si podem ser reunidos em *data sets*, que são como pastas que guardam muitos arquivos. 
+> **Arquivos geralmente não são inseridos nos bancos de dados, e sim guardados em disco ou na memória.** Mas arquivos que se relacionam entre si podem ser reunidos em *data sets*, que são como pastas que guardam muitos arquivos. 
 
 ## Operações básicas (CRUD)
 
@@ -87,14 +93,16 @@ As transações dos bancos de dados devem aderir as propriedades ACID: devem ter
 
 Na área da TI, é muito comum surgirem vagas de **Analista de Dados**, **Engenheiro de Dados** e **Cientista de Dados**.
 
-**O Engenheiro de Dados** é o profissional que desenvolve a arquitetura do database. Geralmente mantêm ou constrói uma database do zero, gerenciando permissões de segurança, aumentando a performance e velocidade, fazendo **data modeling** (como definindo tabelas) e **pipelines** (como os sistemas irão utilizar os dados). 
+- **O Engenheiro de Dados** é o profissional que desenvolve a arquitetura do database. Geralmente mantêm ou constrói uma database do zero, gerenciando permissões de segurança, aumentando a performance e velocidade, fazendo **data modeling** (como definindo tabelas) e **pipelines** (como os sistemas irão utilizar os dados). 
 
 > Um exemplo prático é quando uma empresa compra outra: o engenheiro irá trabalhar mergindo os dois sistemas de database - o já existente com o novo.
 
-**O Analista de Dados** é quem irá trabalhar com os dados já tratados. Essa pessoa faz análises inteligentes a partir dos dados brutos, construindo tabelas, gráficos e comunicando à empresa algumas informações que podem ser desprendidas dos dados.  
+- **O Analista de Dados** é quem irá trabalhar com os dados já tratados. Essa pessoa faz análises inteligentes a partir dos dados brutos, construindo tabelas, gráficos e comunicando à empresa algumas informações que podem ser desprendidas dos dados.  
 
 > Um exemplo é quando uma empresa quer saber qual produto vendeu mais esse ano: o analista pode pegar as informações da tabela de vendas e se reunir com a gerência para mostrar a evolução das vendas dos produtos nos meses de outubro, setembro e agosto.
 
-Já o **Cientista de Dados** pode **prever o futuro**: utilizando de cálculos, estatística, Machine Learning e IA, essa pessoa pode tentar criar projeções para simular situações futuras. 
+- Já o **Cientista de Dados** pode **prever o futuro**: utilizando de cálculos, estatística, Machine Learning e IA, essa pessoa pode tentar criar projeções para simular situações futuras. 
 
 > Quando uma empresa quer saber se vale mais a pena investir em um produto ou em outro, um cientista pode criar simulações para o próximo ano, calculando chances e probabilidades na comparação.
+
+Obs: as vezes as empresas esperam que um só profissional de dados assuma várias funções...

@@ -1,143 +1,91 @@
-# Welcome to StackEdit!
+# Aula 2
 
-Hi! I'm your first Markdown file in **StackEdit**. If you want to learn about StackEdit, you can read me. If you want to play with Markdown, you can edit me. Once you have finished with me, you can create new files by opening the **file explorer** on the left corner of the navigation bar.
-
-
-# Files
-
-StackEdit stores your files in your browser, which means all your files are automatically saved locally and are accessible **offline!**
-
-## Create files and folders
-
-The file explorer is accessible using the button in left corner of the navigation bar. You can create a new file by clicking the **New file** button in the file explorer. You can also create folders by clicking the **New folder** button.
-
-## Switch to another file
-
-All your files and folders are presented as a tree in the file explorer. You can switch from one to another by clicking a file in the tree.
-
-## Rename a file
-
-You can rename the current file by clicking the file name in the navigation bar or by clicking the **Rename** button in the file explorer.
-
-## Delete a file
-
-You can delete the current file by clicking the **Remove** button in the file explorer. The file will be moved into the **Trash** folder and automatically deleted after 7 days of inactivity.
-
-## Export a file
-
-You can export the current file by clicking **Export to disk** in the menu. You can choose to export the file as plain Markdown, as HTML using a Handlebars template or as a PDF.
+::: info SQL e Postgres (07/10)
+Essa aula foi mais uma introdução ao SQL. Resolvi continuar aqui tópicos teóricos que foram apresentados na aula 1 antes de escrever sobre SQL.
+A partir daqui, falarei sobre "banco de dados" ou "databases" como DB, para encurtar.
+:::
 
 
-# Synchronization
 
-Synchronization is one of the biggest features of StackEdit. It enables you to synchronize any file in your workspace with other files stored in your **Google Drive**, your **Dropbox** and your **GitHub** accounts. This allows you to keep writing on other devices, collaborate with people you share the file with, integrate easily into your workflow... The synchronization mechanism takes place every minute in the background, downloading, merging, and uploading file modifications.
+## Níveis de dados
 
-There are two types of synchronization and they can complement each other:
+Os profissionais de **banco de dados** podem trabalhar em 3 níveis (chamados níveis de abstração): **nível de visão**, **nível conceitual** ou **nível físico**.
 
-- The workspace synchronization will sync all your files, folders and settings automatically. This will allow you to fetch your workspace on any other device.
-	> To start syncing your workspace, just sign in with Google in the menu.
+- Os que trabalham no **nível físico** gerenciam a parte *física*, como dispositivos de armazenamento, otimizando servidores, cabeamentos, refrigeração, particionamento físico etc.
 
-- The file synchronization will keep one file of the workspace synced with one or multiple files in **Google Drive**, **Dropbox** or **GitHub**.
-	> Before starting to sync files, you must link an account in the **Synchronize** sub-menu.
+- No **nível conceitual** estão os diagramas e esquemas - como as tabelas e os dados se relacionam entre si, muitas vezes pensado antes do sistema ir para o ar.
 
-## Open a file
-
-You can open a file from **Google Drive**, **Dropbox** or **GitHub** by opening the **Synchronize** sub-menu and clicking **Open from**. Once opened in the workspace, any modification in the file will be automatically synced.
-
-## Save a file
-
-You can save any file of the workspace to **Google Drive**, **Dropbox** or **GitHub** by opening the **Synchronize** sub-menu and clicking **Save on**. Even if a file in the workspace is already synced, you can save it to another location. StackEdit can sync one file with multiple locations and accounts.
-
-## Synchronize a file
-
-Once your file is linked to a synchronized location, StackEdit will periodically synchronize it by downloading/uploading any modification. A merge will be performed if necessary and conflicts will be resolved.
-
-If you just have modified your file and you want to force syncing, click the **Synchronize now** button in the navigation bar.
-
-> **Note:** The **Synchronize now** button is disabled if you have no file to synchronize.
-
-## Manage file synchronization
-
-Since one file can be synced with multiple locations, you can list and manage synchronized locations by clicking **File synchronization** in the **Synchronize** sub-menu. This allows you to list and remove synchronized locations that are linked to your file.
+- No **nível de visão** estão os dados já tratados, e um analista construir tabelas e dashboards para visualizar e medir dados.
 
 
-# Publication
+## Tipos de Database
 
-Publishing in StackEdit makes it simple for you to publish online your files. Once you're happy with a file, you can publish it to different hosting platforms like **Blogger**, **Dropbox**, **Gist**, **GitHub**, **Google Drive**, **WordPress** and **Zendesk**. With [Handlebars templates](http://handlebarsjs.com/), you have full control over what you export.
+Tipos ou modelos de database são as diferentes formas usadas para se organizar dados. O mais comum é o **modelo Relacional**, mas existem outros:
 
-> Before starting to publish, you must link an account in the **Publish** sub-menu.
-
-## Publish a File
-
-You can publish your file by opening the **Publish** sub-menu and by clicking **Publish to**. For some locations, you can choose between the following formats:
-
-- Markdown: publish the Markdown text on a website that can interpret it (**GitHub** for instance),
-- HTML: publish the file converted to HTML via a Handlebars template (on a blog for example).
-
-## Update a publication
-
-After publishing, StackEdit keeps your file linked to that publication which makes it easy for you to re-publish it. Once you have modified your file and you want to update your publication, click on the **Publish now** button in the navigation bar.
-
-> **Note:** The **Publish now** button is disabled if your file has not been published yet.
-
-## Manage file publication
-
-Since one file can be published to multiple locations, you can list and manage publish locations by clicking **File publication** in the **Publish** sub-menu. This allows you to list and remove publication locations that are linked to your file.
+- **Modelo Hierárquico**: os dados são organizados em uma estrutura que parece uma árvore: pense em uma árvore genealógica, na qual os dados tem pai, irmãos, filhos etc. Pense nos arquivos do seu PC, que estão dentro de pastas (diretórios) que estão dentro de outras pastas.
 
 
-# Markdown extensions
+> SQL é uma linguagem de programação: são comandos utilizados para interagir com databases (mais sobre isso na aula 2).
 
-StackEdit extends the standard Markdown syntax by adding extra **Markdown extensions**, providing you with some nice features.
+Bancos de dados também devem permitem que sejam *administrados*, por meio de permissões de segurança, backups e monitoramento do sistema por exemplo.
 
-> **ProTip:** You can disable any **Markdown extension** in the **File properties** dialog.
+Devem também permitir acessos simultâneos (muitas pessoas ou processos devem ser capazes de utilizar o banco de dados ao mesmo tempo) e definição de dados (*modelagem de dados*: como os dados serão estruturados dentro do database). 
 
+## Propriedades (ACID)
 
-## SmartyPants
-
-SmartyPants converts ASCII punctuation characters into "smart" typographic punctuation HTML entities. For example:
-
-|                |ASCII                          |HTML                         |
-|----------------|-------------------------------|-----------------------------|
-|Single backticks|`'Isn't this fun?'`            |'Isn't this fun?'            |
-|Quotes          |`"Isn't this fun?"`            |"Isn't this fun?"            |
-|Dashes          |`-- is en-dash, --- is em-dash`|-- is en-dash, --- is em-dash|
+Quando nós (ou nossa aplicação) interagimos com o database, cada unidade mínima de trabalho é chamada de **Transação**. Por exemplo, quando eu escrevo um código em SQL e envio para o database, ocorreu uma transação. 
 
 
-## KaTeX
-
-You can render LaTeX mathematical expressions using [KaTeX](https://khan.github.io/KaTeX/):
-
-The *Gamma function* satisfying $\Gamma(n) = (n-1)!\quad\forall n\in\mathbb N$ is via the Euler integral
-
-$$
-\Gamma(z) = \int_0^\infty t^{z-1}e^{-t}dt\,.
-$$
-
-> You can find more information about **LaTeX** mathematical expressions [here](http://meta.math.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference).
+As transações dos bancos de dados devem aderir as propriedades ACID: devem ter **Atomicidade**, **Consistência**, agir em **Isolamento** e possuir **Durabilidade**:
 
 
-## UML diagrams
+- **Atomicidade** significa que ou uma transação ocorre completamente, ou não ocorre.
+	>  Se você escrever várias linhas de código (com várias declarações) mas algo estiver escrito errado, nada será executado, ao invés de ser executada algumas das linhas.
 
-You can render UML diagrams using [Mermaid](https://mermaidjs.github.io/). For example, this will produce a sequence diagram:
+- **Consistência** indica que os dados só devem ser mudados segundo as regras impostas. 
+	> O banco de dados deve seguir só estabelecido para chaves primárias, chaves estrangeiras, triggers, cascades...
 
-```mermaid
-sequenceDiagram
-Alice ->> Bob: Hello Bob, how are you?
-Bob-->>John: How about you John?
-Bob--x Alice: I am good thanks!
-Bob-x John: I am good thanks!
-Note right of John: Bob thinks a long<br/>long time, so long<br/>that the text does<br/>not fit on a row.
+  - **Isolamento** obriga que cada transação deve agir separadamente uma da outra, ocorrendo em isolamento. 
+	> Assim, muitas transações podem acessar os dados sem interferir uma com a outra.
 
-Bob-->Alice: Checking with John...
-Alice->John: Yes... John, how are you?
-```
+  - **Durabilidade** assegura que as transações acontecidas irão continuar registradas, mesmo em casos de queda do sistema. 
+	> Mesmo se o serviço ficar fora do ar, ele ainda salvou seu cadastro e registrou sua compra, sem deletar o seu pedido, por exemplo. 
 
-And this will produce a flow chart:
 
-```mermaid
-graph LR
-A[Square Rect] -- Link text --> B((Circle))
-A --> C(Round Rect)
-B --> D{Rhombus}
-C --> D
-```
+::: details Exemplos práticos:
+
+1. Vamos supor que eu queira lhe passar um PIX. Para o database, isso significa fazer duas operações: registrar que agora eu tenho menos dinheiro e que você tem mais. Caso a operação que registra que você tem mais do que antes falhar, então o dinheiro não irá "sumir" da minha conta: a **Atomicidade** indica que ou é tudo ou é nada - ou a transação ocorre completamente ou então não ocorre.     
+
+
+
+2. Imagine que fizemos um site, mas hackers estão descobrindo a senha dos nossos usuários por meio de códigos maliciosos que enviam direto para nosso database. Para resolver, podemos usar da **Consistência** e aplicar regras na submissão de dados, como por exemplo impedir que enviem um código porque agora só aceitamos que seja enviado um número máximo de caracteres. 
+
+
+
+3. Pense que na hora que eu fui olhar meu saldo, você iria me enviar um PIX, mas o sistema caiu e o valor não foi enviado (*mas sua transação foi commitada pelo db e sofreu rollback*). Eu não irei ver um saldo errado por conta do **Isolamento**: a transação "ver meu saldo" não deve ocorrer ao mesmo tempo que a sua "enviar o PIX". Ou primeiro você me envia e depois o saldo é atualizado com o novo valor, ou então me aparece o saldo antigo e só quando a transação ocorre e eu atualizo o saldo é atualizado. 
+
+
+
+4. Vamos supor que eu lhe passei um PIX, mas logo depois disso o sistema caiu. A **Durabilidade** faz com que a transação não seja perdida, e quando o sistema voltar você ainda terá o PIX registrado na sua conta.  
+
+
+:::
+
+
+
+
+## Área de dados
+
+Na área da TI, é muito comum surgirem vagas de **Analista de Dados**, **Engenheiro de Dados** e **Cientista de Dados**.
+
+**O Engenheiro de Dados** é o profissional que desenvolve a arquitetura do database. Geralmente mantêm ou constrói uma database do zero, gerenciando permissões de segurança, aumentando a performance e velocidade, fazendo **data modeling** (como definindo tabelas) e **pipelines** (como os sistemas irão utilizar os dados). 
+
+> Um exemplo prático é quando uma empresa compra outra: o engenheiro irá trabalhar mergindo os dois sistemas de database - o já existente com o novo.
+
+**O Analista de Dados** é quem irá trabalhar com os dados já tratados. Essa pessoa faz análises inteligentes a partir dos dados brutos, construindo tabelas, gráficos e comunicando à empresa algumas informações que podem ser desprendidas dos dados.  
+
+> Um exemplo é quando uma empresa quer saber qual produto vendeu mais esse ano: o analista pode pegar as informações da tabela de vendas e se reunir com a gerência para mostrar a evolução das vendas dos produtos nos meses de outubro, setembro e agosto.
+
+Já o **Cientista de Dados** pode **prever o futuro**: utilizando de cálculos, estatística, Machine Learning e IA, essa pessoa pode tentar criar projeções para simular situações futuras. 
+
+> Quando uma empresa quer saber se vale mais a pena investir em um produto ou em outro, um cientista pode criar simulações para o próximo ano, calculando chances e probabilidades na comparação.

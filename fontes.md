@@ -18,6 +18,9 @@ Minha recomendação é de só utilizar IA para tirar dúvidas pontuais e espec�
 ### Aqui estão algumas referências que consultei: 
 
 
+- Slides dos Professores Daniel Teófilo e Maurílio Oliveira
+
+
 - Propriedades ACID
 	> ACID Properties in Databases With Examples  (ByteByteGo) [https://www.youtube.com/watch?v=GAe5oB742dw](https://www.youtube.com/watch?v=GAe5oB742dw)
 
