@@ -18,9 +18,11 @@ export default defineConfig({
         text: 'Links úteis', link: '/links',
         items: [
           { text: 'Aula 1', link: '/aula1' },
-          { text: 'Aula 2', link: '/aula2' }
+          { text: 'Aula 2', link: '/aula2' },
+          { text: 'Fontes', link: '/fontes' }
         ]
       }
+      
     ],
 
     socialLinks: [
