@@ -1,7 +1,7 @@
-# Aula 2
+# Aula 2 - Bancos de Dados Relacionais
 
 ::: info SQL e Postgres (07/10)
-Essa aula foi mais uma introdução ao SQL. Resolvi continuar aqui tópicos teóricos que foram apresentados na aula 1 antes de escrever sobre SQL.
+Essa aula foi uma introdução ao SQL e ao Postgres. Resolvi continuar aqui tópicos teóricos que foram apresentados na aula 1 antes de escrever sobre Postgres.
 A partir daqui, falarei sobre "banco de dados" ou "databases" como DB, para encurtar.
 :::
 
@@ -18,74 +18,107 @@ Os profissionais de **banco de dados** podem trabalhar em 3 níveis (chamados n�
 - No **nível de visão** estão os dados já tratados, e um analista construir tabelas e dashboards para visualizar e medir dados.
 
 
-## Tipos de Database
-
-Tipos ou modelos de database são as diferentes formas usadas para se organizar dados. O mais comum é o **modelo Relacional**, mas existem outros:
-
-- **Modelo Hierárquico**: os dados são organizados em uma estrutura que parece uma árvore: pense em uma árvore genealógica, na qual os dados tem pai, irmãos, filhos etc. Pense nos arquivos do seu PC, que estão dentro de pastas (diretórios) que estão dentro de outras pastas.
-
-
-> SQL é uma linguagem de programação: são comandos utilizados para interagir com databases (mais sobre isso na aula 2).
-
-Bancos de dados também devem permitem que sejam *administrados*, por meio de permissões de segurança, backups e monitoramento do sistema por exemplo.
-
-Devem também permitir acessos simultâneos (muitas pessoas ou processos devem ser capazes de utilizar o banco de dados ao mesmo tempo) e definição de dados (*modelagem de dados*: como os dados serão estruturados dentro do database). 
-
-## Propriedades (ACID)
-
-Quando nós (ou nossa aplicação) interagimos com o database, cada unidade mínima de trabalho é chamada de **Transação**. Por exemplo, quando eu escrevo um código em SQL e envio para o database, ocorreu uma transação. 
-
-
-As transações dos bancos de dados devem aderir as propriedades ACID: devem ter **Atomicidade**, **Consistência**, agir em **Isolamento** e possuir **Durabilidade**:
-
-
-- **Atomicidade** significa que ou uma transação ocorre completamente, ou não ocorre.
-	>  Se você escrever várias linhas de código (com várias declarações) mas algo estiver escrito errado, nada será executado, ao invés de ser executada algumas das linhas.
-
-- **Consistência** indica que os dados só devem ser mudados segundo as regras impostas. 
-	> O banco de dados deve seguir só estabelecido para chaves primárias, chaves estrangeiras, triggers, cascades...
-
-  - **Isolamento** obriga que cada transação deve agir separadamente uma da outra, ocorrendo em isolamento. 
-	> Assim, muitas transações podem acessar os dados sem interferir uma com a outra.
-
-  - **Durabilidade** assegura que as transações acontecidas irão continuar registradas, mesmo em casos de queda do sistema. 
-	> Mesmo se o serviço ficar fora do ar, ele ainda salvou seu cadastro e registrou sua compra, sem deletar o seu pedido, por exemplo. 
-
-
-::: details Exemplos práticos:
-
-1. Vamos supor que eu queira lhe passar um PIX. Para o database, isso significa fazer duas operações: registrar que agora eu tenho menos dinheiro e que você tem mais. Caso a operação que registra que você tem mais do que antes falhar, então o dinheiro não irá "sumir" da minha conta: a **Atomicidade** indica que ou é tudo ou é nada - ou a transação ocorre completamente ou então não ocorre.     
+## Modelos de DB
 
 
 
-2. Imagine que fizemos um site, mas hackers estão descobrindo a senha dos nossos usuários por meio de códigos maliciosos que enviam direto para nosso database. Para resolver, podemos usar da **Consistência** e aplicar regras na submissão de dados, como por exemplo impedir que enviem um código porque agora só aceitamos que seja enviado um número máximo de caracteres. 
+
+> ![Modelo Relacional (Diagrama)](modelo-relacional.png)
+
+**Tipos ou modelos de database** são as diferentes formas usadas para se organizar dados. O mais comum é o **Modelo Relacional**, proposto pelo britânico Edgar F. Codd em 1970.
+
+- Nesse modelo os dados são organizados em tabelas (relações) compostas de linhas e colunas (tuplas e atributos). Temos os dados estruturados como no exemplo:
+
+|Cliente|Cidade  | 
+|--|--|
+| Levi | Fortaleza |
+| Joana | São Paulo |
+| Beatriz | Paraíba |
 
 
-
-3. Pense que na hora que eu fui olhar meu saldo, você iria me enviar um PIX, mas o sistema caiu e o valor não foi enviado (*mas sua transação foi commitada pelo db e sofreu rollback*). Eu não irei ver um saldo errado por conta do **Isolamento**: a transação "ver meu saldo" não deve ocorrer ao mesmo tempo que a sua "enviar o PIX". Ou primeiro você me envia e depois o saldo é atualizado com o novo valor, ou então me aparece o saldo antigo e só quando a transação ocorre e eu atualizo o saldo é atualizado. 
-
+> Nessa tablela (relação), temos em cada coluna os nomes dos clientes, e na coluna do lado, a cidade que esse cliente mora. 
 
 
-4. Vamos supor que eu lhe passei um PIX, mas logo depois disso o sistema caiu. A **Durabilidade** faz com que a transação não seja perdida, e quando o sistema voltar você ainda terá o PIX registrado na sua conta.  
+## Tipos de dados em Atributos (Colunas)
 
+Quando criamos nossas relações (tabelas), podemos definir o tipo de dado que cada coluna irá aceitar. Isso é feito geralmente para economizar espaço e recursos no nosso DB.
+Algumas colunas podem registrar texto e outras só aceitar números, por exemplo:
 
+|Tipo|SQL  | Exemplo | Dado
+|--|--|--|--|
+| Texto | VARCHAR | Nome | Levi
+| Número | INTEGER  | Idade | 27
+| Data | DATE | Aniversário | 21/11/97
+| Varíavel | BOOLEAN | Maior de 18 | Sim
+
+## Chave Primárias
+
+Imagine que você tem um negócio e quer criar um DB para lhe ajudar. Você terá que criar relações (tabelas) com os clientes e forncedores (contendo nome, endereço, telefone), produtos, número de vendas, compras...
+
+Muitas informações podem acabar duplicadas e algumas tabelas podem ficar gigantes, dificultando sua vida. É por isso que temos as **Chaves Primárias** (PK) e **Chaves Estrangeiras** (FK).
+
+A chave primária é uma forma de identificar unicamente cada linha (tupla). Pense por exemplo que você tem dois clientes com o mesmo nome:
+
+|Cliente|Cidade  | 
+|--|--|
+| Levi | Fortaleza |
+| Levi | Fortaleza |
+
+Como irá diferenciar as duas tuplas? Como irá saber para qual Levi vendeu o quê? Nesse caso podemos numerar cada linha:
+
+|ID | Cliente|Cidade  | 
+|--|--|--|
+|1 | Levi | Fortaleza |
+|2|  Levi | Fortaleza |
+
+Nesse caso, ID é a **Chave Primária** (PK).
+
+## Chave Estrangeira
+
+**A Chave Estrangeira** referencia a Chave Primária de outra tabela, estabelecendo relações entre diferentes tabelas.
+
+Suponha que você tenha uma tabela (relação) de pedidos.
+
+|Cliente|Pedido | 
+|--|--|
+|Levi | Macarrão |
+|Levi | Biscoito |
+
+Assim você estará duplicando relações, já que já existe uma tabela de clientes. Imagine se eu mudo de cidade, por exemplo: você terá que trocar esse dado em várias relações.
+Faça uso das **Chaves Estrangeiras**
+
+|clientes_id|Pedido | 
+|--|--|
+|1 | Macarrão |
+|1 | Biscoito |
+
+Agora você sabe qual foi o cliente que fez o pedido (O primeiro Levi, que podemos achar na tabela de Clientes acima) e anotar diferentes pedidos. 
+
+::: info Chave Composta e Candidata
+Para simplificar, falaremos sobre esses outros tipos de Chave só depois.
 :::
 
 
+## SQL (Structured Query Language )
+
+**SQL** é uma linguagem utilizada para nos comunicarmos com Sistemas de Gerenciamento de Databases (RDBMS). Quando formos criar nossas tabelas e inserir dados no nosso DB podemos fazer de maneira 'no-code', isso é, só clicando nos botões de um programa (interface gráfica de usuário) ou então escrevendo código ('high-code').
 
 
-## Área de dados
+::: danger Sobre SQL
+Programar e escrever códigos de programação não é como falar com uma IA (tipo o Gemini ou ChatGPT): o Sistema de Gerenciamento de Databases não vai 'entender' se você não escrever da forma exatamente correta (chamado erro de sintaxe) e pode simplesmente não executar nada do que você pediu. 
 
-Na área da TI, é muito comum surgirem vagas de **Analista de Dados**, **Engenheiro de Dados** e **Cientista de Dados**.
+Você terá que usar os comandos exatos e em inglês! Mas não se preocupe em decorar cada comando agora: o importante é entender como se faz e para quê.
 
-**O Engenheiro de Dados** é o profissional que desenvolve a arquitetura do database. Geralmente mantêm ou constrói uma database do zero, gerenciando permissões de segurança, aumentando a performance e velocidade, fazendo **data modeling** (como definindo tabelas) e **pipelines** (como os sistemas irão utilizar os dados). 
+:::
 
-> Um exemplo prático é quando uma empresa compra outra: o engenheiro irá trabalhar mergindo os dois sistemas de database - o já existente com o novo.
+## PostgreSQL e RDMBS
 
-**O Analista de Dados** é quem irá trabalhar com os dados já tratados. Essa pessoa faz análises inteligentes a partir dos dados brutos, construindo tabelas, gráficos e comunicando à empresa algumas informações que podem ser desprendidas dos dados.  
+**Postgres** é um Sistema de Gerenciamento de Database (RDBMS) gratuito e de código aberto. Com ele, podemos *gerenciar* o nosso DB: criar tabelas, consultar dados, deletar etc, utilizando a linguagem SQL ou por meio de algum programa (como o **myAdmin**). 
 
-> Um exemplo é quando uma empresa quer saber qual produto vendeu mais esse ano: o analista pode pegar as informações da tabela de vendas e se reunir com a gerência para mostrar a evolução das vendas dos produtos nos meses de outubro, setembro e agosto.
+- [PostgreSQL](https://www.postgresql.org/download/)
 
-Já o **Cientista de Dados** pode **prever o futuro**: utilizando de cálculos, estatística, Machine Learning e IA, essa pessoa pode tentar criar projeções para simular situações futuras. 
+Para instalar em um PC, clique em Windows, depois em 
+["Download the installer"](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads), clique no ícone de azul de instalação e abra o instalador no seu PC.  
+ > Esse programa instala no seu PC um **Servidor PostgreSQL**, o **pgAdmin** e **Stack Builder** (um instalador de drivers e utilitários para o Postgres).
 
-> Quando uma empresa quer saber se vale mais a pena investir em um produto ou em outro, um cientista pode criar simulações para o próximo ano, calculando chances e probabilidades na comparação.
+ Você terá que escolher uma senha para o gerenciamento (anote!). Em seguida, pode clicar em seguir (*next*).

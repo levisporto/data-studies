@@ -1,4 +1,4 @@
-# Aula 1!
+# Aula 1 - Bancos de Dados!
 
 ::: info Olá! (30/09)
 Seja bem vindo(a) às minhas anotações das aulas de Data Analytics da Digital College. Esse curso possui 4 módulos: Banco de Dados (64h), ETL (48h), Phyton para Análise de Dados (44h), e Power BI Desktop (36h). Tem duração de 1 ano e cobre **SQL**, **Postgres**, **Business Inteligence**, **Python**, **Pandas** e mais.
@@ -60,10 +60,10 @@ As transações dos bancos de dados devem aderir as propriedades ACID: devem ter
 - **Consistência** indica que os dados só devem ser mudados segundo as regras impostas. 
 	> O banco de dados deve seguir só estabelecido para chaves primárias, chaves estrangeiras, triggers, cascades...
 
-  - **Isolamento** obriga que cada transação deve agir separadamente uma da outra, ocorrendo em isolamento. 
+- **Isolamento** obriga que cada transação deve agir separadamente uma da outra, ocorrendo em isolamento. 
 	> Assim, muitas transações podem acessar os dados sem interferir uma com a outra.
 
-  - **Durabilidade** assegura que as transações acontecidas irão continuar registradas, mesmo em casos de queda do sistema. 
+- **Durabilidade** assegura que as transações acontecidas irão continuar registradas, mesmo em casos de queda do sistema. 
 	> Mesmo se o serviço ficar fora do ar, ele ainda salvou seu cadastro e registrou sua compra, sem deletar o seu pedido, por exemplo. 
 
 
