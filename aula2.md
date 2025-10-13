@@ -23,7 +23,7 @@ Os profissionais de **banco de dados** podem trabalhar em 3 níveis (chamados n�
 
 
 
-> ![Modelo Relacional (Diagrama)]
+> ![Modelo Relacional (Diagrama)](/modelo-relacional.png)
 
 **Tipos ou modelos de database** são as diferentes formas usadas para se organizar dados. O mais comum é o **Modelo Relacional**, proposto pelo britânico Edgar F. Codd em 1970.
 
@@ -99,7 +99,7 @@ Para simplificar, falaremos sobre esses outros tipos de Chave só depois.
 :::
 
 
-## SQL (Structured Query Language )
+## SQL (Structured Query Language)
 
 **SQL** é uma linguagem utilizada para nos comunicarmos com Sistemas de Gerenciamento de Databases (RDBMS). Quando formos criar nossas tabelas e inserir dados no nosso DB podemos fazer de maneira 'no-code', isso é, só clicando nos botões de um programa (interface gráfica de usuário) ou então escrevendo código ('high-code').
 
