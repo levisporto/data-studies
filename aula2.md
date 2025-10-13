@@ -23,7 +23,7 @@ Os profissionais de **banco de dados** podem trabalhar em 3 níveis (chamados n�
 
 
 
-> ![Modelo Relacional (Diagrama)](/modelo-relacional.png)
+> ![Modelo Relacional (Diagrama)](/modelo-relacional.jpg)
 
 **Tipos ou modelos de database** são as diferentes formas usadas para se organizar dados. O mais comum é o **Modelo Relacional**, proposto pelo britânico Edgar F. Codd em 1970.
 
