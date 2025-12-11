@@ -1,4 +1,4 @@
-# Aula 1 - Bancos de Dados!
+# Bancos de Dados
 
 ::: info Olá! (30/09)
 Seja bem vindo(a) às minhas anotações das aulas de Data Analytics da Digital College. Esse curso possui 4 módulos: Banco de Dados (64h), ETL (48h), Phyton para Análise de Dados (44h), e Power BI Desktop (36h). Tem duração de 1 ano e cobre **SQL**, **Postgres**, **Business Inteligence**, **Python**, **Pandas** e mais.

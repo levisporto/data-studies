@@ -1,3 +1,5 @@
+# SQL - Structured Query Language
+
 O requisito mais importante para quem quer trabalhar com Dados ou com Back-end é saber fazer consultas e pedidos para o [banco de dados](https://www.linkedin.com/feed/update/urn:li:ugcPost:7384629482109726720/). **Hoje em dia não basta só saber Excel para tentar uma vaga na área de Análise de Dados: é necessário saber também (pelo menos) SQL!**
 
 SQL, ou **S**tructured **Q**uery **L**anguage_ (do inglês ''Linguagem de Consulta Estruturada'') é a linguagem padrão para se comunicar com bancos de dados. **É como uma linguagem de programação**: são comandos escritos por você, o usuário ou o programa que possibilitam consultar os dados, adicionar dados ao banco de dados, atualizar, deletar, gerenciar quem tem acesso aos dados, e muito mais.

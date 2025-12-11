@@ -1,4 +1,4 @@
-# Aula 2 - Bancos de Dados Relacionais
+# Bancos de Dados Relacionais
 
 ::: info Modelos de Bancos de Dados, Chave Primária/Estrangeira, RDBMS
 A partir daqui, falarei sobre "banco de dados" ou "databases" como DB, para encurtar.
