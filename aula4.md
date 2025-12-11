@@ -1,3 +1,9 @@
+# Vá além dos Gráficos e Números! - Dados para Tomada de Decisão 
+
+::: info
+Esse texto foi postado originalmente no Linkedin, na minha newsletter [Iniciando com Dados](https://www.linkedin.com/newsletters/iniciando-com-dados-%25F0%259F%2593%258A%25F0%259F%2597%2584%25EF%25B8%258F-7384557831817031680/).
+:::
+
 ### Quando estamos começando a aprender sobre Dados (Análise de Dados, Engenharia de Dados, Desenvolvimento Back-end), é imprescindível praticar as 'Hard-Skills': saber muito bem utilizar as linguagens e os programas (SQL, Power BI, Python...).
 
 Essa parte técnica vai nos ajudar muito à fazer boas consultas aos bancos de dados, e nos dar as tabelas e informações que precisamos apresentar e analisar.

@@ -20,7 +20,7 @@ export default defineConfig({
           { text: 'Bancos de Dados', link: '/aula1' },
           { text: 'Bancos de Dados Relacionais', link: '/aula2' },
           { text: 'SQL', link: '/aula3' },
-          { text: 'SQL', link: '/aula4' },
+          { text: 'Análise de Dados', link: '/aula4' },
           { text: 'Fontes', link: '/fontes' }
         ]
       }

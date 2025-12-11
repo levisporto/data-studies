@@ -1,7 +1,6 @@
 # Aula 2 - Bancos de Dados Relacionais
 
-::: info SQL e Postgres (07/10)
-Essa aula foi uma introdução ao SQL e ao Postgres. Resolvi continuar aqui tópicos teóricos que foram apresentados na aula 1 antes de escrever sobre Postgres.
+::: info Modelos de Bancos de Dados, Chave Primária/Estrangeira, RDBMS
 A partir daqui, falarei sobre "banco de dados" ou "databases" como DB, para encurtar.
 :::
 
